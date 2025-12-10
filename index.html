@@ -27,3 +27,127 @@
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoLife Adventure — Eco-Cyber Mission</title>
+
+  <!-- Three.js CDN (r128) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-left">EcoLife Adventure</div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#why">Why</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#play">Play</a>
+      <a href="#pledge">Pledge</a>
+    </div>
+  </nav>
+
+  <!-- HERO + CANVAS -->
+  <header class="hero">
+    <canvas id="globe"></canvas>
+
+    <div class="hero-overlay">
+      <h1 class="hero-title">EcoLife Adventure</h1>
+      <p class="hero-sub">A neon-cyber mission to measure & improve your daily eco impact — gamified for global action.</p>
+
+      <div class="hero-ctas">
+        <button id="start-quiz" class="btn btn-primary">Start Quiz</button>
+        <a class="btn btn-ghost" href="#about">Learn More</a>
+      </div>
+
+      <div class="hero-bubble">
+        <div class="bubble-item"><strong>SDG</strong><span>12 • 13</span></div>
+        <div class="bubble-item"><strong>No signup</strong><span>Zero cost</span></div>
+      </div>
+    </div>
+
+    <div class="stars-layer" aria-hidden="true"></div>
+  </header>
+
+  <!-- MAIN SECTIONS -->
+  <main class="main">
+    <!-- ABOUT -->
+    <section id="about" class="section card">
+      <h2>About EcoLife Adventure</h2>
+      <p>
+        EcoLife Adventure is a lightweight, gamified website that helps users discover their daily environmental impact
+        through a quick interactive quiz, friendly challenges, and instant tips. No signup, browser only, and free for all.
+      </p>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" class="section card">
+      <h2>Why this matters (SDG alignment)</h2>
+      <ul>
+        <li><strong>SDG 12 — Responsible Consumption:</strong> Encourages reduced single-use plastics and smarter consumption.</li>
+        <li><strong>SDG 13 — Climate Action:</strong> Promotes transport & energy habits that lower carbon footprints.</li>
+      </ul>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="section card">
+      <h2>Quick 5-Question Quiz</h2>
+      <div id="question-area"></div>
+      <div class="quiz-foot">
+        <button id="next-btn" class="btn btn-primary">Start</button>
+        <div class="result-box">
+          <div class="progress-bar"><div id="progress"></div></div>
+          <div id="score">0%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUN PLAY / SMALL INTERACTIVES -->
+    <section id="play" class="section card">
+      <h2>Fun Activities</h2>
+      <div class="play-grid">
+        <div class="play-card">
+          <h3>Daily Micro-Challenge</h3>
+          <p>Get one small eco-task (e.g., skip a plastic bottle). Complete it and claim XP.</p>
+          <button id="generate-challenge" class="btn">Get Challenge</button>
+          <div id="challenge-output" class="small-muted"></div>
+        </div>
+
+        <div class="play-card">
+          <h3>Pledge Board</h3>
+          <p>Make a short pledge to change a habit today. Your pledge appears below.</p>
+          <input id="pledge-input" placeholder="I pledge to..." />
+          <button id="pledge-btn" class="btn">Pledge</button>
+          <div id="pledge-list" class="pledge-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLEDGE / CALL TO ACTION -->
+    <section id="pledge" class="section card">
+      <h2>Take the Eco Pledge</h2>
+      <p>Small actions add up. Choose 1 item to act on today and tick it off tomorrow.</p>
+      <ul>
+        <li>Use a reusable bottle</li>
+        <li>Unplug unused chargers</li>
+        <li>Choose a plant-based meal once</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>© EcoLife Adventure — Built for UN-IT Club Workshop</div>
+    <div class="footer-links">Made with ❤️ — No server, no signup.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
