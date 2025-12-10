@@ -155,3 +155,10 @@ input#pledge-input{ width:100%; padding:10px; margin-top:8px; border-radius:8px;
   .nav-right{ display:none; }
 }
 
+/* other sections... */
+
+/* Earth rotation animation */
+@keyframes spin {
+    from { background-position: 0 0; }
+    to { background-position: -1000px 0; }
+}
