@@ -87,20 +87,6 @@ body::before {
 }
 
 
-
-/* stars */
-.stars-layer{
-  position:absolute; inset:0; z-index:1;
-  background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
-  background-size: 6px 6px;
-  
-  background-image: url('stars.png');
-  background-image: url('earth_clouds.jpg');
-
-  opacity:0.7; mix-blend-mode: screen; transform: translateZ(0);
-  filter: blur(0.6px);
-}
-
 /* overlay content */
 .hero-overlay{
   position: relative; z-index: 30; width:100%; max-width:1100px; text-align:center; padding: 28px; pointer-events: auto;
