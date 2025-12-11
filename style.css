@@ -1,192 +1,74 @@
 
 
+/* GLOBAL WEBSITE BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
 
-
-
-/* ===== Reset & Base ===== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root{
-  --bg1: #071026;
-  --bg2: #0b1930;
-  --neon-blue: #00d2ff;
-  --neon-green: #39ff7a;
-  --muted: #9fb3b0;
-  --card: rgba(12,16,22,0.6);
-  --glass: rgba(255,255,255,0.04);
-}
-html,body{ height:100%; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #dbeafe; background: linear-gradient(180deg,var(--bg1),var(--bg2));}
-
-/* NAV */
-.nav{
-  position: fixed; z-index: 40; top: 12px; left:0; right:0;
-  display:flex; justify-content:space-between; align-items:center;
-  padding: 8px 28px; pointer-events:auto;
-  backdrop-filter: blur(6px);
-}
-.nav-left{ font-weight:700; color:var(--neon-green); letter-spacing:0.6px; }
-.nav-right a{
-  color:var(--muted); margin-left:14px; text-decoration:none; font-size:0.95rem;
-}
-.nav-right a:hover{ color:var(--neon-blue); transform:translateY(-2px); transition:0.18s; }
-
-
-/* overlay content */
-.hero-overlay{
-  position: relative; z-index: 30; width:100%; max-width:1100px; text-align:center; padding: 28px; pointer-events: auto;
-}
-.hero-title{ font-size: clamp(28px, 3.4vw, 52px); color: white; text-shadow: 0 6px 30px rgba(0,0,0,0.6); letter-spacing: 0.6px; color:var(--neon-green); }
-.hero-sub{ color: #bcded1; margin-top:8px; margin-bottom:18px; font-size:1.05rem; }
-
-/* CTA */
-.hero-ctas{ display:flex; gap:12px; justify-content:center; margin-top:12px; }
-.btn{
-  border: none; cursor:pointer; padding:10px 16px; border-radius:10px; font-weight:600;
-  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  color: #e6fbf0; box-shadow: 0 6px 24px rgba(0,0,0,0.45);
-}
-.btn-primary{
-  border:1px solid rgba(57,255,122,0.08);
-  background: linear-gradient(90deg, rgba(57,255,122,0.10), rgba(0,210,255,0.05));
-  color: white;
-  box-shadow: 0 8px 30px rgba(57,255,122,0.06);
+    /* your star background – FULL PAGE */
+    background: url("stars-bg.png") repeat;
+    background-size: cover;
 }
 
-/* bubble small indicators */
-.hero-bubble{
-  margin-top:14px; display:flex; gap:12px; justify-content:center; align-items:center;
-}
-.bubble-item{ background:var(--glass); padding:8px 12px; border-radius:999px; color:var(--muted); display:flex; gap:10px; font-size:0.9rem; }
-.bubble-item strong{ color:var(--neon-green); font-weight:700; font-size:0.88rem; }
-
-/* MAIN / Sections */
-.main{ position:relative; z-index:20; margin-top:-60px; padding: 18px; }
-.section{ max-width:1100px; margin: 28px auto; padding: 22px; border-radius:14px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 8px 30px rgba(5,8,12,0.6); }
-.card h2{ color:var(--neon-blue); margin-bottom:8px; font-size:1.3rem;}
-.section p, .section ul { color:#bcded1; line-height:1.5; margin-top:8px; font-size:0.98rem;}
-
-/* QUIZ */
-#question-area .card{ background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.18)); padding:18px; border-radius:12px; border:1px solid rgba(57,255,122,0.04); }
-.option{
-  padding:12px; margin:10px 0; border-radius:10px; cursor:pointer;
-  background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.02);
-  color:var(--muted);
-}
-.option:hover{ transform:translateX(6px); color:white; box-shadow: 0 6px 20px rgba(0,0,0,0.6); transition:0.18s; }
-
-/* quiz footer */
-.quiz-foot{ display:flex; gap:18px; align-items:center; justify-content:center; margin-top:16px; flex-wrap:wrap; }
-.result-box{ display:flex; gap:14px; align-items:center; }
-.progress-bar{ width:260px; height:12px; background:rgba(255,255,255,0.03); border-radius:999px; overflow:hidden; border:1px solid rgba(255,255,255,0.02);}
-#progress{ width:0%; height:100%; background: linear-gradient(90deg,var(--neon-blue), var(--neon-green)); transition: width 600ms cubic-bezier(.2,.8,.2,1); border-radius:999px; }
-#score{ color:var(--neon-green); font-weight:700; font-size:1.05rem; }
-
-/* PLAY CARDS */
-.play-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:12px; margin-top:10px; }
-.play-card{ padding:14px; border-radius:12px; background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.08)); border:1px solid rgba(255,255,255,0.02); }
-.small-muted{ margin-top:10px; color:#9dbfb2; font-size:0.95rem; }
-input#pledge-input{ width:100%; padding:10px; margin-top:8px; border-radius:8px; background: transparent; border:1px solid rgba(255,255,255,0.04); color: #e6fbf0; }
-
-/* footer */
-.footer{ text-align:center; padding:18px; color:#9fb3b0; margin-top:20px; }
-
-/* responsive */
-@media (max-width:720px){
-  .nav{ padding:10px 14px; }
-  .hero-overlay{ padding: 18px; }
-  .hero-title{ font-size:clamp(20px,6vw,36px); }
-  .nav-right{ display:none; }
-}
-
-/* other sections... */
-
-/* Earth rotation animation */
-@keyframes spin {
-    from { background-position: 0 0; }
-    to { background-position: -1000px 0; }
-}
-/* ===== FIXED STAR BACKGROUND ACROSS WHOLE WEBSITE ===== */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; 
-    height: 100vh;
-
-    background: url('stars.png') center/cover repeat;
-    opacity: 0.45;
-
-    z-index: -5;
-    pointer-events: none;
-}
-
-/* ===== FULL SCREEN HERO ===== */
+/* HERO SECTION */
 #hero {
     height: 100vh;
     width: 100%;
     position: relative;
-    overflow: hidden;
+    text-align: center;
+    color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background: rgba(0, 0, 0, 0.5); /* slight overlay */
 }
 
-/* ===== REALISTIC EARTH (CENTERED) ===== */
+/* EARTH CONTAINER */
 #earth-container {
     position: absolute;
-    width: 480px;
-    height: 480px;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+
     z-index: 1;
 }
 
-#earth {
+/* CANVAS FULLY FITS CONTAINER */
+#earthCanvas {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-
-    background-image: url('earth_clouds.jpg');
-    background-size: 200% auto;
-    background-repeat: repeat-x;
-    background-position: 0 0;
-
-    animation: spinEarth 24s linear infinite;
-    box-shadow:
-        inset -20px -20px 50px rgba(0, 0, 0, 0.6),
-        0 0 55px rgba(0, 150, 255, 0.45);
 }
 
-@keyframes spinEarth {
-    from { background-position: 0 0; }
-    to { background-position: -2000px 0; }
-}
-
-/* ===== TEXT ON TOP OF EARTH ===== */
-.hero-content {
+/* HERO CONTENT ABOVE EARTH */
+.hero-title,
+.hero-subtitle,
+.cta-button {
     position: relative;
-    z-index: 3;
-    text-align: center;
+    z-index: 5;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    color: #39ff7a;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
-}
-
-.hero-content p {
-    color: #d8f7e8;
-    margin-top: 10px;
-}
-
-.hero-content button {
+.cta-button {
+    padding: 12px 28px;
+    background: #00ffbf;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
     margin-top: 18px;
-    padding: 12px 20px;
-    border-radius: 10px;
-    background: rgba(0,255,150,0.09);
-    border: 1px solid rgba(0,255,150,0.2);
-    color: white;
-    cursor: pointer;
 }
+
+/* OTHER SECTIONS */
+section {
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
